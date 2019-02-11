@@ -1,0 +1,55 @@
+/* Patrones de color */
+
+$cPrimario: #ECCD77;
+$cSecundario: #C88D47;
+$texto: #52575C;
+$bordeBoton: #E5DFDA;
+
+
+
+h2{
+	color: $cSecundario;
+}
+
+body{
+	color: $texto;
+}
+
+.subtitulo{
+	font-size: 1.5em;
+	color: $cSecundario;
+}
+
+.container-fluid{
+	background-color: $cPrimario;
+}
+
+.btn-outline-secondary {
+	color: $cSecundario;
+    border-color: $cSecundario;
+}
+
+.btn-outline-secondary:hover{
+	background-color: $cSecundario;
+    border-color: $cSecundario;
+}
+
+
+
+.btn-dark{
+    background-color: $cSecundario;
+    border-color: $cSecundario;
+}
+
+/* estilos de prueba */
+
+
+/* .container{
+	border: 1px solid red;
+}
+.row{
+	border: 1px solid blue;
+}
+.row>*{
+	border: 1px solid green;
+} */

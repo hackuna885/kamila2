@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* Patrones de color */
+h2 {
+  color: #C88D47; }
+
+body {
+  color: #52575C; }
+
+.subtitulo {
+  font-size: 1.5em;
+  color: #C88D47; }
+
+.container-fluid {
+  background-color: #ECCD77; }
+
+.btn-outline-secondary {
+  color: #C88D47;
+  border-color: #C88D47; }
+
+.btn-outline-secondary:hover {
+  background-color: #C88D47;
+  border-color: #C88D47; }
+
+.btn-dark {
+  background-color: #C88D47;
+  border-color: #C88D47; }
+
+/* estilos de prueba */
+/* .container{
+	border: 1px solid red;
+}
+.row{
+	border: 1px solid blue;
+}
+.row>*{
+	border: 1px solid green;
+} */
+
+/*# sourceMappingURL=style.css.map */
