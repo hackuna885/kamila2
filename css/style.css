@@ -1,5 +1,16 @@
 @charset "UTF-8";
 /* Patrones de color */
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: .9em; }
+
+  p {
+    font-size: 1.2em; } }
+.fondoGrisRallas {
+  -webkit-box-shadow: inset 0px 0px 0px 1px #e8e8e8;
+          box-shadow: inset 0px 0px 0px 1px #e8e8e8;
+  background: #f6f8fb url(../images/image-wrapper.svg); }
+
 h2 {
   color: #C88D47; }
 
@@ -10,8 +21,13 @@ body {
   font-size: 1.5em;
   color: #C88D47; }
 
-.container-fluid {
+.cabecera {
   background-color: #ECCD77; }
+
+.pie {
+  background-color: #EDEEF0;
+  background-image: url(../images/overlay.png), url(../images/footer.svg);
+  background-size: 128px 128px,	100% 100%; }
 
 .btn-outline-secondary {
   color: #C88D47;
@@ -25,6 +41,17 @@ body {
   background-color: #C88D47;
   border-color: #C88D47; }
 
+.texto-vertical-1 {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr; }
+
+.cImg {
+  width: 82px;
+  display: inline-block;
+  text-align: center;
+  margin: auto; }
+
 /* estilos de prueba */
 /* .container{
 	border: 1px solid red;
@@ -34,6 +61,6 @@ body {
 }
 .row>*{
 	border: 1px solid green;
-} */
+}    */
 
 /*# sourceMappingURL=style.css.map */

@@ -44,7 +44,7 @@ if (empty($_GET['pag'])) {
 		$material = $resul2['mat_catProd'];
 		$imgCat = $resul2['imgCat_catProd'];
 
-		echo'<div class="col-12 col-sm-4">
+		echo'<div class="col-12 col-sm-6 col-md-4">
 				<img src="../../catalogo/img/c/'; echo $imgCat.'" class="img-fluid rounded mx-auto d-block mb-3">
 				<h4 class="text-center">'; echo $nomObjeto.'</h4>
 				<h5 class="text-center text-muted">'; echo $modelo.'</h5>

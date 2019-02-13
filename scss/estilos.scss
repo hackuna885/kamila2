@@ -4,7 +4,21 @@ $cPrimario: #ECCD77;
 $cSecundario: #C88D47;
 $texto: #52575C;
 $bordeBoton: #E5DFDA;
+$pieCuadro: #EDEEF0;
 
+@media only screen and (max-width: 576px) {
+ html{
+    font-size: .9em;
+  }
+  p{
+  	font-size: 1.2em;
+  }
+}
+
+.fondoGrisRallas {
+    box-shadow: inset 0px 0px 0px 1px #e8e8e8;
+    background: #f6f8fb url(../images/image-wrapper.svg);
+}
 
 
 h2{
@@ -20,8 +34,13 @@ body{
 	color: $cSecundario;
 }
 
-.container-fluid{
+.cabecera{
 	background-color: $cPrimario;
+}
+.pie{
+	background-color: $pieCuadro;
+	background-image: url(../images/overlay.png), url(../images/footer.svg);
+    background-size: 128px 128px,	100% 100%;
 }
 
 .btn-outline-secondary {
@@ -41,6 +60,17 @@ body{
     border-color: $cSecundario;
 }
 
+
+.texto-vertical-1 {
+    writing-mode: vertical-lr;
+}
+.cImg{
+	width: 82px;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+}
+
 /* estilos de prueba */
 
 
@@ -52,4 +82,4 @@ body{
 }
 .row>*{
 	border: 1px solid green;
-} */
+}    */
