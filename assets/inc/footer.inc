@@ -6,43 +6,64 @@
 				<p class="subtitulo text-center pb-4">Te ofrecemos, asesoría profesional.</p>
 
 				<div class="row py-5">
-					<div class="col-12 col-sm-6">
-						<form action="" method="post">
+					<div class="col-12 col-sm-12 col-md-6">
+						<form action="../protected/php/verificar.php" method="post">
 							<div class="row">
 								<div class="form-group col-12 col-sm-6">
-									<input type="text" class="form-control" placeholder="Nombre"/>
+									<input type="text" class="form-control" name="txtNombre" placeholder="Nombre" required/>
 								</div>
 								<div class="form-group col-12 col-sm-6">
-									<input type="text" class="form-control" placeholder="Correo"/>
+									<input type="email" class="form-control" name="txtCorreo" placeholder="Correo" required/>
 								</div>
 								<div class="form-group col-12">
-									<textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+									<textarea class="form-control" rows="5" name="txtMensaje" placeholder="Mensaje" required></textarea>
 								</div>
 								<div class="form-group col-12 col-sm-6 col-lg-4">
 									<input type="submit" class="btn btn-outline-secondary btn-lg container-fluid" value="Enviar"/>
 								</div>
 								<div class="form-group col-12 col-sm-6 col-lg-4">
-									<button type="button" class="btn btn-outline-secondary btn-lg container-fluid">Limpiar</button>
+									<input type="reset" class="btn btn-outline-secondary btn-lg container-fluid" value="Limpiar"/>
 								</div>
 							</div>
 						</form>
 					</div>
-					<div class="col-12 col-sm-6">
+					<div class="col-12 col-sm-12 col-md-6">
 						<div class="row">
 							<div class="col-12">
 								<div class="row">
 									<div class="col-12 col-sm-6">
-										<a href="#" class="text-muted">Link 1</a>
+										<div class="row">
+											<div class="col-2 d-flex align-self-center justify-content-center">
+												<i class="icono fab fa-facebook-square"></i>
+											</div>
+											<div class="col-10 d-flex align-self-center pl-0">
+												<a href="https://www.facebook.com/kamilailuminacion/" class="text-muted redes">facebook.com/kamilailuminacion</a>
+											</div>
+										</div>
 										<hr>
 									</div>
 									<div class="col-12 col-sm-6">
-										<a href="#" class="text-muted">Link 2</a>
-										<hr>
+										<!-- <div class="row">
+											<div class="col-2 d-flex align-self-center justify-content-center">
+												<i class="icono fab fa-facebook-square"></i>
+											</div>
+											<div class="col-10 d-flex align-self-center pl-0">
+												<a href="https://www.instagram.com/kamilailuminacion/" class="text-muted redes">instagram.com/kamilailuminacion</a>
+											</div>
+										</div>
+										<hr> -->
 									</div>
 
 									<div class="col-12 col-sm-6">
-										<a href="#" class="text-muted">Link 3</a>
-										<hr>
+										<!-- <div class="row">
+											<div class="col-2 d-flex align-self-center justify-content-center">
+												<i class="icono fab fa-facebook-square"></i>
+											</div>
+											<div class="col-10 d-flex align-self-center pl-0">
+												<a href="https://www.facebook.com/kamilailuminacion/" class="text-muted redes">facebook.com/kamilailuminacion</a>
+											</div>
+										</div>
+										<hr> -->
 									</div>
 								</div>
 							</div>

@@ -6,13 +6,19 @@ $texto: #52575C;
 $bordeBoton: #E5DFDA;
 $pieCuadro: #EDEEF0;
 
-@media only screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {
  html{
     font-size: .9em;
   }
   p{
   	font-size: 1.2em;
   }
+
+}
+
+.icono {
+  font-size: 2em;
+  color: $texto;
 }
 
 .fondoGrisRallas {
@@ -36,12 +42,16 @@ body{
 
 .cabecera{
 	background-color: $cPrimario;
+  background-image: url(../images/overlay.png);
+  background-size: 128px 128px;
 }
+
 .pie{
 	background-color: $pieCuadro;
 	background-image: url(../images/overlay.png), url(../images/footer.svg);
     background-size: 128px 128px,	100% 100%;
 }
+
 
 .btn-outline-secondary {
 	color: $cSecundario;
@@ -71,15 +81,58 @@ body{
     margin: auto;
 }
 
+.clogoIndex{
+  height: 400px;
+}
+
+
+.tituloP{
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.tituloS{
+  font-size: 1.8em;
+  font-weight: 100;
+  color: $cSecundario;
+}
+
+.textoGrande{
+  font-size: 1.3em;
+  font-weight: 100;
+  color: $cSecundario;
+}
+
+.banner{
+  height: 364px;
+  background-image: url(../images/promo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.recuadro{
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  border: 1px solid #FFF;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.rojo{
+  background-color: red;
+}
+
+
+
 /* estilos de prueba */
 
 
-/* .container{
-	border: 1px solid red;
+/*   .container{
+ border: 1px solid red;
 }
 .row{
-	border: 1px solid blue;
+ border: 1px solid blue;
 }
 .row>*{
-	border: 1px solid green;
-}    */
+ border: 1px solid green;
+}   */

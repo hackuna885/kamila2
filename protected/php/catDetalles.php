@@ -10,10 +10,29 @@ header("Content-Type: text/html; Charset=UTF-8");
 date_default_timezone_set('America/Mexico_City');
 
 
-$_GET['idProducto'] = 1;
+$modObj = 'LAMPARA FLORENCIA';
+$numModCat = '101';
+$matMod = 'CUERO INGLES';
+$diam_catProd = '45';
+$alt_catProd = '69';
+$precio_catProd = '1360';
+$imgDesCat = 'LAMPFLOR101_DC.jpg';
+$imgDibTec = 'LAMPFLOR_DT.jpg';
+
+$imgXzoom = '<img class="xzoom img-fluid rounded mx-auto d-block" id="xzoom-default" src="../catalogo/img/dc/preview/'.$imgDesCat.'" xoriginal="../catalogo/img/dc/original/'.$imgDesCat.'" />';
+
+$imgDibujoTec = '<img src="../catalogo/img/dt/'.$imgDibTec.'" class="img-fluid">';
+
 
 
 if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
+
+
+	if (is_numeric($_GET['idProducto'])) {
+
+	}else{
+		$_GET['idProducto'] = 1;
+	}
 
 
 	$con = new SQLite3("../data/catalogo.db") or die("Problemas para conectar!");
@@ -22,7 +41,7 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 	######## Esta parte es la imagen principal xzoom ########
 
 
-	$cs = $con -> query("SELECT nomObj_catProd,mod_catProd,mat_catProd,diam_catProd,alt_catProd,imgDesCat_catProd,imgDibujoTec_catProd FROM catProd WHERE id = '$_GET[idProducto]'");
+	$cs = $con -> query("SELECT nomObj_catProd,mod_catProd,mat_catProd,diam_catProd,alt_catProd,precio_catProd,imgDesCat_catProd,imgDibujoTec_catProd FROM catProd WHERE id = '$_GET[idProducto]'");
 
 		while ($resul = $cs -> fetchArray()) {
 
@@ -31,6 +50,7 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 			$matMod = $resul['mat_catProd']; // Material del Modelo
 			$diam_catProd = $resul['diam_catProd']; // Diámetro
 			$alt_catProd = $resul['alt_catProd']; // Altura
+			$precio_catProd = $resul['precio_catProd']; // Precio
 			$imgDesCat = $resul['imgDesCat_catProd']; // Imagen del Catalogo DC
 			$imgDibTec = $resul['imgDibujoTec_catProd']; // Dibujo Técnico del Catalogo DT
 
@@ -38,9 +58,9 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 
 		
 
-		$imgXzoom = '<img class="xzoom img-fluid rounded mx-auto d-block" id="xzoom-default" src="../../catalogo/img/dc/preview/'.$imgDesCat.'" xoriginal="../../catalogo/img/dc/original/'.$imgDesCat.'" />';
+		$imgXzoom = '<img class="xzoom img-fluid rounded mx-auto d-block" id="xzoom-default" src="../catalogo/img/dc/preview/'.$imgDesCat.'" xoriginal="../catalogo/img/dc/original/'.$imgDesCat.'" />';
 
-		$imgDibujoTec = '<img src="../../catalogo/img/dt/'.$imgDibTec.'" class="img-fluid">';
+		$imgDibujoTec = '<img src="../catalogo/img/dt/'.$imgDibTec.'" class="img-fluid">';
 
 
 	######## Esta parte es la imagen principal xzoom ########
@@ -63,13 +83,13 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 				<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 				  <div class="carousel-inner">
 				    <div class="carousel-item active">
-				      <img class="d-block w-100 rounded" src="../../catalogo/slide/n1.jpg" alt="First slide">
+				      <img class="d-block w-100 rounded" src="../catalogo/slide/n1.jpg" alt="First slide">
 				    </div>
 				    <div class="carousel-item">
-				      <img class="d-block w-100 rounded" src="../../catalogo/slide/n3.jpg" alt="Second slide">
+				      <img class="d-block w-100 rounded" src="../catalogo/slide/n3.jpg" alt="Second slide">
 				    </div>
 				    <div class="carousel-item">
-				      <img class="d-block w-100 rounded" src="../../catalogo/slide/n2.jpg" alt="Third slide">
+				      <img class="d-block w-100 rounded" src="../catalogo/slide/n2.jpg" alt="Third slide">
 				    </div>
 				  </div>
 				</div>
@@ -82,13 +102,13 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 				<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
 				  <div class="carousel-inner">
 				    <div class="carousel-item active">
-				      <img class="d-block w-100 rounded" src="../../catalogo/slide/l1.jpg" alt="First slide">
+				      <img class="d-block w-100 rounded" src="../catalogo/slide/l1.jpg" alt="First slide">
 				    </div>
 				    <div class="carousel-item">
-				      <img class="d-block w-100 rounded" src="../../catalogo/slide/l2.jpg" alt="Second slide">
+				      <img class="d-block w-100 rounded" src="../catalogo/slide/l2.jpg" alt="Second slide">
 				    </div>
 				    <div class="carousel-item">
-				      <img class="d-block w-100 rounded" src="../../catalogo/slide/l3.jpg" alt="Third slide">
+				      <img class="d-block w-100 rounded" src="../catalogo/slide/l3.jpg" alt="Third slide">
 				    </div>
 				  </div>
 				</div>
@@ -101,13 +121,13 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 				<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 				  <div class="carousel-inner">
 				    <div class="carousel-item active">
-				      <img class="d-block w-100 rounded" src="../../catalogo/slide/q1.jpg" alt="First slide">
+				      <img class="d-block w-100 rounded" src="../catalogo/slide/q1.jpg" alt="First slide">
 				    </div>
 				    <div class="carousel-item">
-				      <img class="d-block w-100 rounded" src="../../catalogo/slide/q2.jpg" alt="Second slide">
+				      <img class="d-block w-100 rounded" src="../catalogo/slide/q2.jpg" alt="Second slide">
 				    </div>
 				    <div class="carousel-item">
-				      <img class="d-block w-100 rounded" src="../../catalogo/slide/q3.jpg" alt="Third slide">
+				      <img class="d-block w-100 rounded" src="../catalogo/slide/q3.jpg" alt="Third slide">
 				    </div>
 				  </div>
 				</div>
@@ -122,7 +142,33 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 					<h4><?php echo $matMod; ?></h4>
 				</div>
 				<div class="col-12 col-md-5 align-self-center">
-					<p class="h3 text-danger text-center card-block my-auto">$ 0,000.00</p>
+					<p class="h3 text-danger text-center card-block my-auto">
+						<?php 
+
+
+							$var = $precio_catProd;
+
+							$contCaract = strlen($var);
+
+							if ($contCaract >= 4 && $contCaract < 7) {
+								$num = substr($var, 0, $contCaract-3);
+								$num2 = substr($var, $contCaract-3, 3);
+								echo "$".$num.",".$num2.".00 MX";
+							}elseif ($contCaract >= 7 && $contCaract < 10) {
+								$num = substr($var, 0, $contCaract-6);
+								$num2 = substr($var, $contCaract-6, 3);
+								$num3 = substr($var, $contCaract-3, 6);
+								echo "$".$num.",".$num2.",".$num3.".00 MX";
+								# code...
+							}else{
+								echo "$".$var.".00 MX";
+							}
+
+
+
+						?>
+							
+					</p>
 				</div>
 			</div>
 
@@ -144,8 +190,9 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 
 	######## Esta parte crea el catalogo de la vista previa y el zoom ########
 
+if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 
-			$cs2 = $con -> query("SELECT nomObj_catProd,mod_catProd,mat_catProd,imgDesCat_catProd FROM catProd WHERE nomObj_catProd ='$modObj' ORDER BY mod_catProd");
+			$cs2 = $con -> query("SELECT nomObj_catProd,mod_catProd,mat_catProd,imgDesCat_catProd FROM catProd WHERE nomObj_catProd ='$modObj' AND activo_catProd = '1' ORDER BY mod_catProd");
 
 
 
@@ -160,8 +207,8 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 				echo '
 
 					<div class="cImg">
-					<a href="../../catalogo/img/dc/original/'.$imgDesCat2.'">
-				        <img class="xzoom-gallery" width="80" src="../../catalogo/img/dc/thumbs/'.$imgDesCat2.'" xpreview="../../catalogo/img/dc/preview/'.$imgDesCat2.'" title="MOD. '.$numModCat2.' '.$matMod2.'">
+					<a href="../catalogo/img/dc/original/'.$imgDesCat2.'">
+				        <img class="xzoom-gallery" width="80" src="../catalogo/img/dc/thumbs/'.$imgDesCat2.'" xpreview="../catalogo/img/dc/preview/'.$imgDesCat2.'" title="MOD. '.$numModCat2.' '.$matMod2.'">
 				    </a>
 				    <span>MOD. '.$numModCat2.'</span>
 				    </div>
@@ -175,7 +222,7 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 
 	$con -> close();
 
-
+}
 
 				        	 ?>
 
@@ -203,7 +250,7 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 										<?php echo $imgDibujoTec; ?>
 							</div>
 							<div class="col-2 texto-vertical-1 text-center">
-								<b>Altura: <?php echo $diam_catProd; ?></b>
+								<b>Altura: <?php echo $alt_catProd; ?></b>
 							</div>
 						</div>
 					</div>
@@ -229,7 +276,7 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 			<p>Enviamos a toda la república.</p>
 
 			<div class="row">
-				<div class="col-12 col-lg-6">
+				<!-- <div class="col-12 col-lg-6">
 					<select class="custom-select">
 					  <option value="1" selected>1</option>
 					  <option value="2">2</option>
@@ -240,6 +287,19 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 				</div>
 				<div class="col-12 col-lg-6">
 					<button type="button" class="btn btn-success btn-block">Comprar</button>
+				</div>
+				 -->
+
+				<div class="col-12">
+					<button type="button" class="btn btn-success btn-block">Comprar</button>
+				</div>
+
+				<div class="container-fluid">
+					<div class="row mt-3">
+						<div class="col-12 p-0 text-center">
+							<!-- <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkamilailuminacion%2F&tabs=timeline&width=240&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="240" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe> -->
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -256,7 +316,7 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 	<div class="container">
 		<div class="row text-center bg-white">
 			<div class="col-12 col-sm-4 mx-auto order-md-1">
-				<img class="img-fluid rounded" src="../../catalogo/masVendidos/ultimo101.jpg" alt="">
+				<img class="img-fluid rounded" src="../catalogo/masVendidos/ultimo101.jpg" alt="">
 			</div>
 			<div class="col-12 col-sm-4 mx-auto order-sm-2 order-md-4">
 				<br>
@@ -266,7 +326,7 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 				<a href="#" class="btn btn-outline-secondary mx-auto d-block mb-5" role="button">Más detalles</a>
 			</div>
 			<div class="col-12 col-sm-4 mx-auto order-md-2">
-				<img class="img-fluid rounded" src="../../catalogo/masVendidos/ultimo237.jpg" alt="">
+				<img class="img-fluid rounded" src="../catalogo/masVendidos/ultimo237.jpg" alt="">
 			</div>
 			<div class="col-12 col-sm-4 mx-auto order-sm-4 order-md-5">
 				<br>
@@ -276,7 +336,7 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 				<a href="#" class="btn btn-outline-secondary mx-auto d-block mb-5" role="button">Más detalles</a>
 			</div>
 			<div class="col-12 col-sm-4 mx-auto order-md-3">
-				<img class="img-fluid rounded" src="../../catalogo/masVendidos/ultimo240.jpg" alt="">
+				<img class="img-fluid rounded" src="../catalogo/masVendidos/ultimo240.jpg" alt="">
 			</div>
 			<div class="col-12 col-sm-4 mx-auto order-md-6">
 				<br>
