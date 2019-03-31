@@ -18,6 +18,7 @@ $alt_catProd = '69';
 $precio_catProd = '1360';
 $imgDesCat = 'LAMPFLOR101_DC.jpg';
 $imgDibTec = 'LAMPFLOR_DT.jpg';
+$linkMercado = '';
 
 $imgXzoom = '<img class="xzoom img-fluid rounded mx-auto d-block" id="xzoom-default" src="../catalogo/img/dc/preview/'.$imgDesCat.'" xoriginal="../catalogo/img/dc/original/'.$imgDesCat.'" />';
 
@@ -41,7 +42,7 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 	######## Esta parte es la imagen principal xzoom ########
 
 
-	$cs = $con -> query("SELECT nomObj_catProd,mod_catProd,mat_catProd,diam_catProd,alt_catProd,precio_catProd,imgDesCat_catProd,imgDibujoTec_catProd FROM catProd WHERE id = '$_GET[idProducto]'");
+	$cs = $con -> query("SELECT nomObj_catProd,mod_catProd,mat_catProd,diam_catProd,alt_catProd,precio_catProd,imgDesCat_catProd,imgDibujoTec_catProd,links_mercado_catProd FROM catProd WHERE id = '$_GET[idProducto]'");
 
 		while ($resul = $cs -> fetchArray()) {
 
@@ -53,6 +54,7 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 			$precio_catProd = $resul['precio_catProd']; // Precio
 			$imgDesCat = $resul['imgDesCat_catProd']; // Imagen del Catalogo DC
 			$imgDibTec = $resul['imgDibujoTec_catProd']; // Dibujo Técnico del Catalogo DT
+			$linkMercado = $resul['links_mercado_catProd']; // Link de MercadoLibre
 
 		}
 
@@ -291,7 +293,8 @@ if (isset($_GET['idProducto']) && !empty($_GET['idProducto'])) {
 				 -->
 
 				<div class="col-12">
-					<button type="button" class="btn btn-success btn-block">Comprar</button>
+					<a class="btn btn-success btn-block" href="<?php echo $linkMercado; ?>">Comprar</a>
+					<!-- <button type="button" class="btn btn-success btn-block">Comprar</button> -->
 				</div>
 
 				<div class="container-fluid">
